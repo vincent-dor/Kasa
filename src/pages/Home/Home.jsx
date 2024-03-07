@@ -3,6 +3,7 @@ import Banner from "../../components/Banner/Banner";
 import Card from "../../components/Card/Card";
 import { Link } from "react-router-dom";
 import logementsData from "../../data/logements.json";
+import image from "../../assets/images/background-banner.png";
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -13,7 +14,7 @@ export default function Home() {
 
   return (
     <>
-      <Banner />
+      <Banner imageUrl={image}  showText={true} />
       <div className="cards-container">
         {data.map((logement, id) => (
           <div key={id}>
