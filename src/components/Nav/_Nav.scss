@@ -1,0 +1,13 @@
+.nav {
+  display: flex;
+  &__home {
+    margin-left: 1.3rem;
+  }
+  &__about {
+    margin-left: 2rem;
+  }
+}
+
+.nav a.active {
+  text-decoration: underline;
+}
