@@ -1,49 +1,39 @@
-import { useRoutes, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import Layout from "./components/Layout/Layout";
 import ErrorPage from "./pages/Error/Error";
 import DetailCard from "./pages/DetailCard/DetailCard";
 
-function Layout() {
-  return (
-    <>
-      <Header />
-      <Outlet />
-      <Footer />
-    </>
-  );
-}
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "detailcard/:id",
+        element: <DetailCard />,
+      },
+      {
+        path: "/error",
+        element: <ErrorPage />,
+      },
+      {
+        path: "*",
+        element: <Navigate replace to="/error" />,
+      },
+    ],
+  },
+]);
 
-const App = () => {
-  const routes = useRoutes([
-    {
-      path: "/",
-      element: <Layout />,
-      errorElement: <ErrorPage />,
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "about",
-          element: <About />,
-        },
-        {
-          path: "detailcard/:id",
-          element: <DetailCard />,
-          errorElement: <ErrorPage />,
-        },
-        {
-          path: "*",
-          element: <ErrorPage />,
-        },
-      ],
-    },
-  ]);
-  return routes;
-};
+const App = () => <RouterProvider router={router} />;
 
 export default App;

@@ -1,0 +1,34 @@
+.caroussel {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  margin: 20px;
+  border-radius: 10px;
+
+  &__leftArrow {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 20px;
+    z-index: 10;
+    left: 2%;
+  }
+  &__rightArrow {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 20px;
+    z-index: 10;
+    right: 2%;
+  }
+  &__pictures {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

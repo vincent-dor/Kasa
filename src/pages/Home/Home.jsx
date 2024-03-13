@@ -1,20 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Banner from "../../components/Banner/Banner";
 import Card from "../../components/Card/Card";
 import { Link } from "react-router-dom";
 import logementsData from "../../data/logements.json";
 import image from "../../assets/images/background-banner.png";
 
-export default function Home() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    setData(logementsData);
-  }, []);
+const Home = () => {
+  const [data] = useState(logementsData);
 
   return (
     <>
-      <Banner imageUrl={image}  showText={true} />
+      <Banner imageUrl={image} showText={true} />
       <div className="cards-container">
         {data.map((logement, id) => (
           <div key={id}>
@@ -26,4 +22,6 @@ export default function Home() {
       </div>
     </>
   );
-}
+};
+
+export default Home;
