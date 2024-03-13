@@ -18,7 +18,7 @@ export default function Home() {
       <div className="cards-container">
         {data.map((logement, id) => (
           <div key={id}>
-            <Link to={`/logement/${logement.id}`}>
+            <Link to={`/detailcard/${logement.id}`}>
               <Card image={logement.cover} title={logement.title} />
             </Link>
           </div>

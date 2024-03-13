@@ -1,0 +1,38 @@
+.collapse {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+
+  &__header {
+    background-color: #ff6060;
+    color: white;
+    font-size: 20px;
+    padding: 7px;
+    border-radius: 5px;
+  }
+  &__content {
+    margin: 15px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+  }
+  &__content.open {
+    max-height: 1000px;
+  }
+  &__title {
+    margin: 0;
+  }
+  &__icon {
+    width: 15px;
+    height: 15px;
+    transition: transform 0.5s ease;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__chevron {
+    transform: rotate(-180deg);
+  }
+}
