@@ -3,11 +3,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #ff6060;
-  margin: 40px;
+  color: $primary-color;
 
   &__text {
-    font-size: 19px;
+    font-size: $title-mobile-size;
     width: 70%;
     margin: auto;
     text-align: center;
@@ -17,8 +16,23 @@
     font-weight: bold;
   }
   &__link {
-    font-size: 15px;
+    font-size: $mobile-size;
     text-decoration: underline;
     margin-top: 100px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .error {
+    &__text {
+      font-size: $title-desktop-size;
+    }
+    &__number {
+      font-size: 175px;
+      margin: 100px;
+    }
+    &__link {
+      font-size: $desktop-size;
+      margin-bottom: 50px;
+    }
   }
 }

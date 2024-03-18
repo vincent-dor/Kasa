@@ -9,7 +9,7 @@ const Home = () => {
   const [data] = useState(logementsData);
 
   return (
-    <>
+    <div>
       <Banner imageUrl={image} showText={true} />
       <div className="cards-container">
         {data.map((logement, id) => (
@@ -20,7 +20,7 @@ const Home = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

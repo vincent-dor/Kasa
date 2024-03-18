@@ -1,13 +1,22 @@
 .nav {
   display: flex;
-  &__home {
-    margin-left: 1.3rem;
-  }
+  &__home,
   &__about {
-    margin-left: 2rem;
+    font-size: $mobile-size;
+    margin-left: 1.5rem;
   }
 }
 
 .nav a.active {
   text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    &__home,
+    &__about {
+      font-size: $desktop-size;
+      text-transform: none;
+    }
+  }
 }

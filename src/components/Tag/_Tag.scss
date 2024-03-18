@@ -1,0 +1,16 @@
+.tags {
+  display: flex;
+  overflow-x: auto;
+  &__container {
+    background-color: $primary-color;
+    color: $tertiary-color;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 5px 15px;
+  }
+  &__button {
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+}

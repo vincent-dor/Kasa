@@ -1,8 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import Caroussel from "../../components/Caroussel/Caroussel";
+import Slideshow from "../../components/Slideshow/Slideshow";
 import Collapse from "../../components/Collapse/Collapse";
 import Tag from "../../components/Tag/Tag";
+import Host from "../../components/Host/Host";
+import Rating from "../../components/Rating/Rating";
 import logementsData from "../../data/logements.json";
 
 const DetailCard = () => {
@@ -22,17 +24,27 @@ const DetailCard = () => {
 
   return (
     <div>
-      <Caroussel slides={logement.pictures} />
-      <p>{logement.title}</p>
-      <p>{logement.location}</p>
-      <div className="tags-container">
-							{logement.tags.map((tag) => (
-								<Tag key={tag} tag={tag} />
-							))}
-						</div>
+      <Slideshow slides={logement.pictures} />
+      <div className="information">
+        <div className="information__container">
+          <h1 className="title">{logement.title}</h1>
+          <h2 className="title__location">{logement.location}</h2>
+          <div className="tags">
+            {logement.tags.map((tag) => (
+              <Tag key={tag} tag={tag} />
+            ))}
+          </div>
+        </div>
+        <div className="ratingHost">
+          <Rating rating={logement.rating} />
+          <Host hostName={logement.host.name} hostPic={logement.host.picture} />
+        </div>
+      </div>
 
-      <Collapse title="Description" description={logement.description} />
-      <Collapse title="Equipements" description={logement.equipments} />
+      <div className="collapse__detailrow">
+        <Collapse title="Description" description={logement.description} detailCardClassName="collapse__detail" />
+        <Collapse title="Equipements" description={logement.equipments} className="equipment" detailCardClassName="collapse__detail" />
+      </div>
     </div>
   );
 };

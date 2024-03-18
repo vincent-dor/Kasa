@@ -1,0 +1,43 @@
+.title {
+  color: $primary-color;
+  font-weight: 400;
+  font-size: $title-mobile-size;
+  &__location {
+    font-weight: 100;
+    font-size: $mobile-size;
+  }
+}
+
+.host {
+  display: flex;
+  align-items: center;
+  &__name {
+    color: $primary-color;
+    margin-right: 10px;
+    white-space: pre-line;
+    font-size: $mobile-size;
+  }
+  &__picture {
+    border-radius: 100px;
+    height: 45px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: $title-desktop-size;
+    &__location {
+      font-size: $desktop-size;
+    }
+  }
+  .host {
+    justify-content: flex-end;
+    &__name {
+      font-size: $desktop-size;
+    }
+    &__picture {
+      border-radius: 100px;
+      height: 75px;
+    }
+  }
+}

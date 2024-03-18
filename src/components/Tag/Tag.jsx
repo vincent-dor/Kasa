@@ -1,8 +1,8 @@
 const Tag = (props) =>
 {
     return (
-        <div className="tagContainer">
-			<span className="tagButton">{props.tag}</span>
+        <div className="tags__container">
+			<span className="tags__button">{props.tag}</span>
 		</div>
     )
 }
